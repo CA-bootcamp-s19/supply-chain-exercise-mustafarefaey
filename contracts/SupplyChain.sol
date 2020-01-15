@@ -78,10 +78,11 @@ contract SupplyChain {
    so checking that Item.State == ForSale is not sufficient to check that an Item is for sale.
    Hint: What item properties will be non-zero when an Item has been added?
    */
-  modifier forSale
-  modifier sold
-  modifier shipped
-  modifier received
+  modifier forSale(uint _sku) {
+    require(items[_sku].seller != address(0), "Item does not exist!");
+    require(items[_sku].state == State.ForSale, "Item is not for sale!");
+    _;
+  }
 
 
   constructor() public {
