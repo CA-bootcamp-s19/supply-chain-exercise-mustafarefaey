@@ -26,6 +26,12 @@ contract SupplyChain {
     Received
     (declaring them in this order is important for testing)
   */
+  enum State {
+    ForSale,
+    Sold,
+    Shipped,
+    Received
+  }
 
   /* Create a struct named Item.
     Here, add a name, sku, price, state, seller, and buyer
