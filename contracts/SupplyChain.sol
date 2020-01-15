@@ -61,7 +61,8 @@ contract SupplyChain {
 
   modifier verifyCaller(address _address) {require(msg.sender == _address, "You are not authorized for this action!"); _;}
 
-  modifier paidEnough(uint _price) { require(msg.value >= _price); _;}
+  modifier paidEnough(uint _price) {require(msg.value >= _price, "Sent ether is not sufficient!"); _;}
+
   modifier checkValue(uint _sku) {
     //refund them after pay for item (why it is before, _ checks for logic before func)
     _;
