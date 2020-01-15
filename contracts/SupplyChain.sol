@@ -39,6 +39,14 @@ contract SupplyChain {
     if you need help you can ask around :)
     Be sure to add "payable" to addresses that will be handling value transfer
   */
+  struct Item {
+    string name;
+    uint sku;
+    uint price;
+    State state;
+    address payable seller;
+    address payable buyer;
+  }
 
   /* Create 4 events with the same name as each possible State (see above)
     Prefix each event with "Log" for clarity, so the forSale event will be called "LogForSale"
