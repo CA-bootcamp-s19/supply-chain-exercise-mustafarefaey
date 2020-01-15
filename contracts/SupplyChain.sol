@@ -96,6 +96,12 @@ contract SupplyChain {
     _;
   }
 
+  modifier received(uint _sku) {
+    require(items[_sku].seller != address(0), "Item does not exist!");
+    require(items[_sku].state == State.Received, "Item is not received!");
+    _;
+  }
+
   constructor() public {
     /* Here, set the owner as the person who instantiated the contract
        and set your skuCount to 0. */
