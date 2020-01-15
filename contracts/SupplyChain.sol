@@ -59,7 +59,7 @@ contract SupplyChain {
 /* Create a modifer that checks if the msg.sender is the owner of the contract */
   modifier ownerOnly() {require(msg.sender == owner, "You must be the owner!"); _;}
 
-  modifier verifyCaller (address _address) { require (msg.sender == _address); _;}
+  modifier verifyCaller(address _address) {require(msg.sender == _address, "You are not authorized for this action!"); _;}
 
   modifier paidEnough(uint _price) { require(msg.value >= _price); _;}
   modifier checkValue(uint _sku) {
