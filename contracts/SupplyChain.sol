@@ -1,6 +1,6 @@
 /*
     This exercise has been updated to use Solidity version 0.5
-    Breaking changes from 0.4 to 0.5 can be found here: 
+    Breaking changes from 0.4 to 0.5 can be found here:
     https://solidity.readthedocs.io/en/v0.5.0/050-breaking-changes.html
 */
 
@@ -51,7 +51,7 @@ contract SupplyChain {
 
   /* For each of the following modifiers, use what you learned about modifiers
    to give them functionality. For example, the forSale modifier should require
-   that the item with the given sku has the state ForSale. 
+   that the item with the given sku has the state ForSale.
    Note that the uninitialized Item.State is 0, which is also the index of the ForSale value,
    so checking that Item.State == ForSale is not sufficient to check that an Item is for sale.
    Hint: What item properties will be non-zero when an Item has been added?
